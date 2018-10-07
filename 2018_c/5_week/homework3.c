@@ -6,15 +6,17 @@ int main(void){
   while ( i <= 5 ){
     j = 1;
     while ( j <= i){
-      printf(" ");
+      //printf(" ");
       if(i == j){
         if(i % 2 == 0)
-          printf("O\n");
+          printf("O");
         else
-          printf("X\n");
+          printf("X");
       }
       j++;
+      printf(" ");
     }
+    printf("\n");
     i++;
   }
 }
