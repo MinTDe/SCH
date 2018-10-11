@@ -9,16 +9,39 @@ int main(void){
   return 0;
 }
 
+// void printm(int r,int c){
+//   int i = 1;
+//   int row = 0, column = 0;
+//   while(i <= r*c){
+//     if((row+column) % 2 == 0){
+//       printf("x");
+//       //printf("%d", row);
+//     }
+//     else{
+//       printf("o");
+//     }
+//       column++;
+//     if(column % c == 0){
+//       printf("\n");
+//       row++;
+//       column = 0;
+//     }
+//     i++;
+//   }
+// }
 void printm(int r,int c){
-  int i;
-  for(i = 1; i <= r*c; i++){
+  int i = 1;
+  int row = 1, column = 1;
+  for(i = 1;i <= r*c; i++, column++){
+    if((row+column) % 2 == 0)
+          printf("x");
+        else
+          printf("o");
 
-    if(i % 2 == 0)
-      printf("o");
-    else
-      printf("x");
-    if(i % 5== 0)
-      printf("\n");
-
+        if(column % c == 0){
+          printf("\n");
+          row++;
+          column = 0;
+        }
   }
 }
