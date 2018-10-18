@@ -3,32 +3,12 @@
 void printm(int, int);
 
 int main(void){
-  int row = 5, column = 5;
+  int row = 13, column = 2;
   printm(row, column);
 
   return 0;
 }
 
-// void printm(int r,int c){
-//   int i = 1;
-//   int row = 0, column = 0;
-//   while(i <= r*c){
-//     if((row+column) % 2 == 0){
-//       printf("x");
-//       //printf("%d", row);
-//     }
-//     else{
-//       printf("o");
-//     }
-//       column++;
-//     if(column % c == 0){
-//       printf("\n");
-//       row++;
-//       column = 0;
-//     }
-//     i++;
-//   }
-// }
 void printm(int r,int c){
   int i = 1;
   int row = 1, column = 1;
