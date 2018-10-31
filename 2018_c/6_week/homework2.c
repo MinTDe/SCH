@@ -3,7 +3,7 @@
 void printm(int, int);
 
 int main(void){
-  int row = 13, column = 2;
+  int row = 5, column = 5;
   printm(row, column);
 
   return 0;
