@@ -9,12 +9,12 @@ int main(void){
 
     for ( i = 0; i < N; i++)
       avg += point[i];
-    avg /= 5;
+    avg /= N;
     for ( i = 0; i < N; i++){
-      std += (point[i] - avg) * (point[N] - avg);
+      std += (point[i] - avg) * (point[i] - avg);
     }
 
     printf("Avg is %.2f\n", avg);
-    printf("Std is %.2f\n", sqrt(std));
+    printf("Std is %.2f\n", sqrt(std/N));
     return 0;
 }
