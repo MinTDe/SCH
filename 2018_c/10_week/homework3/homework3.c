@@ -25,5 +25,6 @@ void getpermu(int n, int r, int *pp){
   *pp = factorial(n)/(factorial(n-r));
 }
 void getcombi(int n, int r, int *pc){
-  *pc = getpermu(n,r,pc)/factorial(n);
+  getpermu(n,r,pc);
+  *pc /= factorial(r);
 }
