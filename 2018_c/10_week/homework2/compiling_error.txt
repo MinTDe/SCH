@@ -1,5 +1,5 @@
-/tmp/ccv9OqIa.o: In function `getrootp':
+/tmp/ccNju7jv.o: In function `getrootp':
 homework2.c:(.text+0xe7): undefined reference to `sqrt'
-/tmp/ccv9OqIa.o: In function `getrootm':
+/tmp/ccNju7jv.o: In function `getrootm':
 homework2.c:(.text+0x16d): undefined reference to `sqrt'
 collect2: error: ld returned 1 exit status
