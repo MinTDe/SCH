@@ -1,0 +1,26 @@
+/home/mint/Coding/SCH/Study/Array_Pointer7/main.c: In function ‘main’:
+/home/mint/Coding/SCH/Study/Array_Pointer7/main.c:11:13: warning: passing argument 1 of ‘printM2Da’ from incompatible pointer type [-Wincompatible-pointer-types]
+   printM2Da(B);
+             ^
+/home/mint/Coding/SCH/Study/Array_Pointer7/main.c:5:6: note: expected ‘int (*)[2]’ but argument is of type ‘int (*)[3]’
+ void printM2Da(int [][M]);
+      ^~~~~~~~~
+/home/mint/Coding/SCH/Study/Array_Pointer7/main.c:12:13: warning: passing argument 1 of ‘printM2Dp’ from incompatible pointer type [-Wincompatible-pointer-types]
+   printM2Dp(B);
+             ^
+/home/mint/Coding/SCH/Study/Array_Pointer7/main.c:6:6: note: expected ‘int (*)[2]’ but argument is of type ‘int (*)[3]’
+ void printM2Dp(int (*)[M]);
+      ^~~~~~~~~
+/home/mint/Coding/SCH/Study/Array_Pointer7/main.c: At top level:
+/home/mint/Coding/SCH/Study/Array_Pointer7/main.c:17:6: error: conflicting types for ‘printM2Da’
+ void printM2Da(int a[][N]){
+      ^~~~~~~~~
+/home/mint/Coding/SCH/Study/Array_Pointer7/main.c:5:6: note: previous declaration of ‘printM2Da’ was here
+ void printM2Da(int [][M]);
+      ^~~~~~~~~
+/home/mint/Coding/SCH/Study/Array_Pointer7/main.c:27:6: error: conflicting types for ‘printM2Dp’
+ void printM2Dp(int (*a)[N]){
+      ^~~~~~~~~
+/home/mint/Coding/SCH/Study/Array_Pointer7/main.c:6:6: note: previous declaration of ‘printM2Dp’ was here
+ void printM2Dp(int (*)[M]);
+      ^~~~~~~~~
