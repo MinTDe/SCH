@@ -11,7 +11,7 @@ int main(void){
 
   for( i = 0; i < len; i++)
     str[i] = *(p--);
-
+  str[i-1] = '\0';
 
   printf("%s\n", arr);
   printf("%s\n", str);

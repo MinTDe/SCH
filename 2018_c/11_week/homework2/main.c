@@ -13,6 +13,7 @@ int main(void){
         str[j++] = *(p++);
       }
     }
+    str[j] = '\0';
 
     printf(str);
     return 0;
