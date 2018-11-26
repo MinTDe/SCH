@@ -1,0 +1,8 @@
+/home/mint/Coding/SCH/Study/Structure3/main.c:20:18: error: unknown type name ‘strcut’; did you mean ‘stdout’?
+ struct point add(strcut point pt1, stuct point pt2){
+                  ^~~~~~
+                  stdout
+/home/mint/Coding/SCH/Study/Structure3/main.c:20:36: error: unknown type name ‘stuct’; did you mean ‘struct’?
+ struct point add(strcut point pt1, stuct point pt2){
+                                    ^~~~~
+                                    struct
