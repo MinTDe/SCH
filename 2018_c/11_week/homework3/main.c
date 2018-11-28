@@ -27,7 +27,7 @@ void multiply_matrix(int a[][N], int b[][M], int c[][M]){
   for( i = 0; i < M; i++){
     for( j = 0; j < N; j++){
       for( k = 0; k < M; k++){
-        c[i][k] += a[i][j] * b[j][k];
+        (*(c+i))[k] += (*(a+i))[j] * (*(b+j))[k];
       }
     }
   }
