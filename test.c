@@ -27,5 +27,6 @@ void getlength(struct strings *a){
   printf("%d ", a -> Str++);
   printf("%d ", a -> Str++);
   printf("%d ", a -> Str++);
+  jhkjhkjh
 
 }
