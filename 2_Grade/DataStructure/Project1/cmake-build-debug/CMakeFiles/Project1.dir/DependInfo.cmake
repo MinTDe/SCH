@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "G:/SCH/2_Grade/DataStructure/Project1/main.c" "G:/SCH/2_Grade/DataStructure/Project1/cmake-build-debug/CMakeFiles/Project1.dir/main.c.obj"
+  "/Users/youblue/Documents/GitHub/SCH/2_Grade/DataStructure/Project1/main.c" "/Users/youblue/Documents/GitHub/SCH/2_Grade/DataStructure/Project1/cmake-build-debug/CMakeFiles/Project1.dir/main.c.o"
   )
-set(CMAKE_C_COMPILER_ID "MSVC")
+set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH

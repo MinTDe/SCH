@@ -1,14 +1,14 @@
 /* void init(void)                         완료
-* void insert(int pos, Namecard item)      x
-* void delete(int pos)                     x
-* Namecard get_entry(int pos)              x
+* void insert(int pos, Namecard item)      완료
+* void delete(int pos)                     완료
+* Namecard get_entry(int pos)              완료?
 * int is_empty(void)                       완료
 * int is_full(void)                        완료
-* int find(Namecard item)                  x
-* void replace(int pos, Namecard item)     x
-* int size(void)                           x
+* int find(Namecard item)                  완료
+* void replace(int pos, Namecard item)     완료
+* int size(void)                           완료
 * void sort_list(void)                     x
-* void print_list(char *msg)               x
+* void print_list(char *msg)               완료
 */
 #include <stdio.h>
 #include <string.h>
@@ -64,12 +64,13 @@ void insert(int pos, Namecard item){
 
     if(is_full() == 0 && pos >= 0 && pos <= length){
         for(i = length; i > pos; i--)
-            strcpy(iot_list[i].name, iot_list[i-1].name);
+            iot_list[i] = iot_list[i-1];
+
         iot_list[pos] = item;
         length++;
     }
     else
-        printf("포화상태 오류 또는 삽입 위치 오류");
+        printf("포화상태 오류 또는 삽입 위치 오류 \n");
 }
 
 //리스트에서 위치 pos의 원소를 삭제
@@ -77,13 +78,13 @@ void delete(int pos){
     int i;
 
     if(is_empty() == 0 && pos >= 0 && pos <= length - 1){
-        for(i=pos; i < length - 1; i++)
+        for(i=pos; i <= length - 1; i++)
             iot_list[i] = iot_list[i+1];
 
         length--;
     }
     else
-        printf("공백상태 오류 또는 삭제 위치 오류");
+        printf("공백상태 오류 또는 삭제 위치 오류 \n");
 
 }
 
@@ -95,8 +96,9 @@ Namecard get_entry(int pos){
 //item이 리스트 내에 있으면 해당 item의 인덱스를 리턴 없으면 -1을 리턴
 //!!item이 리스트 내에 있다는 의미는 name과 id가 모두 일치해야 함!!
 int find(Namecard item){
-    for(int i = 0; i < length - 1; i++){
-        if(strcmp(iot_list[i].name,item.name) && iot_list[i].name == item.id)
+    for(int i = 0; i <= length - 1; i++){
+        if(strcmp(iot_list[i].name,item.name) != 1 && iot_list[i].id == item.id)
+
             return i;
     }
     return -1;
@@ -104,26 +106,37 @@ int find(Namecard item){
 
 //리스트의 위치 pos에 있는 원소를 item으로 교체
 void replace(int pos, Namecard item){
-
+    iot_list[pos] = item;
 }
 
 //리스트의 원소 개수를 리턴
 int size(void){
-
+    return length;
 }
 
 //학번에 따라 오름차순으로 정렬
 void sort_list(void){
+    Namecard temp;
 
+    for(int i = 0; i < length ; i++){
+        for(int j = 0; j < length - 1; j++){
+            if(iot_list[j].id > iot_list[j+1].id){
+                temp = iot_list[j];
+                iot_list[j] = iot_list[j+1];
+                iot_list[j+1] = temp;
+            }
+        }
+    }
 }
 
 //리스트의 모든 원소를 아래 양식으로 출력
 //예)msg:(이름,학번)(이름,학번)(이름,학번)
 void print_list(char *msg){
-    printf("%s", msg);
-    for(int i=0;i < length;i++){
+    printf("%s : ", msg);
+    for(int i=0;i <= length-1;i++){
         printf("(%s, %d)",iot_list[i].name, iot_list[i].id);
     }
+    printf("\n\n");
 }
 
 int main() {
@@ -144,9 +157,13 @@ int main() {
     print_list("Replace");
 
     delete(3);
+    print_list("Delete");
     delete(size()-1);
+    print_list("Delete");
     delete(0);
+    print_list("Delete");
     delete(30);
+    print_list("Delete");
     print_list("Delete");
 
     sort_list();
