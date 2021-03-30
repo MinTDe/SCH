@@ -65,11 +65,11 @@ void insert(int pos, Namecard item){
     if(is_full() == 0 && pos >= 0 && pos <= length){
         for(i = length; i > pos; i--)
             strcpy(iot_list[i].name, iot_list[i-1].name);
-        iot_list[pos] = item.name;
-
-
-
+        iot_list[pos] = item;
+        length++;
     }
+    else
+        printf("포화상태 오류 또는 삽입 위치 오류");
 }
 
 //리스트에서 위치 pos의 원소를 삭제
@@ -123,7 +123,7 @@ int main() {
 
     replace(size() - 1, make_Namecard("염준선", 20201493));
     replace(4, make_Namecard("한승우", 20201511));
-    replace(20, ,make_Namecard("권호윤", 20201512));
+    replace(20, make_Namecard("권호윤", 20201512));
     print_list("Replace");
 
     delete(3);
