@@ -74,18 +74,32 @@ void insert(int pos, Namecard item){
 
 //리스트에서 위치 pos의 원소를 삭제
 void delete(int pos){
+    int i;
+
+    if(is_empty() == 0 && pos >= 0 && pos <= length - 1){
+        for(i=pos; i < length - 1; i++)
+            iot_list[i] = iot_list[i+1];
+
+        length--;
+    }
+    else
+        printf("공백상태 오류 또는 삭제 위치 오류");
 
 }
 
 //리스트에서 위치 pos의 원소를 반환, !!단 삭제하지는 않음 !!
 Namecard get_entry(int pos){
-
+    return iot_list[pos];
 }
 
 //item이 리스트 내에 있으면 해당 item의 인덱스를 리턴 없으면 -1을 리턴
 //!!item이 리스트 내에 있다는 의미는 name과 id가 모두 일치해야 함!!
 int find(Namecard item){
-
+    for(int i = 0; i < length - 1; i++){
+        if(strcmp(iot_list[i].name,item.name) && iot_list[i].name == item.id)
+            return i;
+    }
+    return -1;
 }
 
 //리스트의 위치 pos에 있는 원소를 item으로 교체
@@ -106,7 +120,10 @@ void sort_list(void){
 //리스트의 모든 원소를 아래 양식으로 출력
 //예)msg:(이름,학번)(이름,학번)(이름,학번)
 void print_list(char *msg){
-
+    printf("%s", msg);
+    for(int i=0;i < length;i++){
+        printf("(%s, %d)",iot_list[i].name, iot_list[i].id);
+    }
 }
 
 int main() {
