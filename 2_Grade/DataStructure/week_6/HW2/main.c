@@ -30,13 +30,23 @@ void insert(int pos, int item){
         return;
     }
 
-        for(i=length; i > pos; i--)
-            list[i] = list[i-1];
+    for(i=length; i > pos; i--)
+        list[i] = list[i-1];
 
-        list[pos] = item;
-        length++;
+    list[pos] = item;
+    length++;
+}
 
-
+void delete(int pos){
+    int i;
+    if(is_empty()==1 || pos < 0|| pos >= length){
+        printf("삭제 에러\n");
+        return;
+    }
+    for(int i = pos;i<length;i++){
+        list[i] = list[i+1];
+    }
+    length--;
 }
 void print_list(){
     printf("(");
@@ -52,6 +62,11 @@ int main() {
         insert(i, num += 10);
 
     insert(10 ,50);
+    print_list();
+
+    delete(0);
+    delete(0);
+    delete(length);
     print_list();
     return 0;
 }
