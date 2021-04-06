@@ -25,15 +25,17 @@ int is_empty(void){
 void insert(int pos, int item){
     int i;
 
-    if(is_full() == 0 && pos >= 0 && pos <= length ){
+    if(is_full() == 1 || pos < 0 || pos > length){
+        printf("삽입 에러\n");
+        return;
+    }
+
         for(i=length; i > pos; i--)
             list[i] = list[i-1];
 
         list[pos] = item;
         length++;
-    }
-    else
-        printf("삽입 에러\n");
+
 
 }
 void print_list(){
